@@ -7,20 +7,10 @@ import {
 
 class LinkList extends Component {
   render() {
-    const linksToRender = [{
-      id: '1',
-      description: 'The coolest GraphQL backend',
-      url: 'https://www.graph.cool'
-    }, {
-      id: '2',
-      description: 'Highly performant GraphQL client from Facebook',
-      url: 'https://facebook.github.io/relay/'
-    }]
-
     return (
       <div>
-        {linksToRender.map(link => (
-          <Link key={link.id} link={link} />
+        {this.props.viewer.allLinks.edges.map(({node}) => (
+          <Link key={node.__id} link={node} />
         ))}
       </div>
     )
