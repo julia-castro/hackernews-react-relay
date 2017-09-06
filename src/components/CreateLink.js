@@ -21,7 +21,7 @@ class CreateLink extends Component {
           <input
             className='mb2'
             value={this.state.url}
-            onChange={(e) => this.setState({url: e.target.url})}
+            onChange={(e) => this.setState({url: e.target.value})}
             type='text'
             placeholder='A URL for the link'
           />
@@ -40,3 +40,5 @@ class CreateLink extends Component {
     CreateLinkMutation(description, url, () => console.log('Mutation completed'))
   }
 }
+
+export default CreateLink
