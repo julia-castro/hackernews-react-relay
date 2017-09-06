@@ -32,3 +32,5 @@ class LinkListPage extends Component {
     )
   }
 }
+
+export default LinkListPage
