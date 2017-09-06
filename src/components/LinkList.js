@@ -1,4 +1,4 @@
-import react, { Component } from 'react'
+import React, { Component } from 'react'
 import Link from './Link'
 
 class LinkList extends Component {
@@ -16,7 +16,7 @@ class LinkList extends Component {
     return (
       <div>
         {linksToRender.map(link => (
-          <Link key={link.id} link={link}
+          <Link key={link.id} link={link} />
         ))}
       </div>
     )
