@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Link from './Link'
+import {
+  createFragmentContainer,
+  graphql
+} from 'react-relay'
 
 class LinkList extends Component {
   render() {
@@ -23,4 +27,14 @@ class LinkList extends Component {
   }
 }
 
-export default LinkList
+export default createFragmentContainer(LinkList, graphql`
+  fragment LinkList_viewer on Viewer {
+    allLinks(last: 100, orderBy: createdAt_DESC) @connection(key: "LinkList_allLinks", filters: []){
+      edges {
+        node {
+          Link_link
+        }
+      }
+    }
+  }
+`)
